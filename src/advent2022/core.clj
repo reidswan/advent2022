@@ -3,13 +3,15 @@
   (:require [advent2022.day1 :as day1]
             [advent2022.day2 :as day2]
             [advent2022.day3 :as day3]
-            [advent2022.day4 :as day4]))
+            [advent2022.day4 :as day4]
+            [advent2022.day5 :as day5]))
 
 (def solns
   {"1" day1/solve
    "2" day2/solve
    "3" day3/solve
-   "4" day4/solve})
+   "4" day4/solve
+   "5" day5/solve})
 
 (defn run
   "Attempt to run the solution for the given day"
