@@ -1,7 +1,7 @@
 (ns advent2022.day7
   (:require [clojure.string :refer [split-lines trim]]
             [advent2022.utils :refer [sum]]
-            [clojure.pprint :refer [pprint]]))
+            [clojure.core.match :refer [match]]))
 
 (def cd-re #"\$ cd (.+)\s*")
 (def ls-re #"\$ ls\s*")
@@ -45,9 +45,9 @@
 (defn exec-ls [curr-directory output dirs]
   (let [children (reduce (fn [children child]
                            (assoc children (path-join (full-name curr-directory) (:name child))
-                                  (cond
-                                    (= (:type child) :file) child
-                                    (= (:type child) :dir-line) (empty-dir (:name child) (full-name curr-directory)))))
+                                  (match (:type child)
+                                    :file     child
+                                    :dir-line (empty-dir (:name child) (full-name curr-directory)))))
                          {}
                          output)
         curr-directory (assoc curr-directory :children (into #{} (keys children)))
