@@ -11,7 +11,7 @@
           head-uniq-size (count (into #{} head))]
       (if (= head-uniq-size marker-len)
         (+ cnt marker-len)
-        (find-marker marker-len (rest chars) (inc' cnt)))))))
+        (recur marker-len (rest chars) (inc' cnt)))))))
 
 (defn solve []
   (let [input (load-input)
