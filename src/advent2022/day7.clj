@@ -14,10 +14,6 @@
 (def total-disk-space 70000000)
 (def required-disk-space 30000000)
 
-(defn trace
-  ([x] (println x) x)
-  ([msg x] (println msg x) x))
-
 (defn is-command [line]
   (= (first (trim line)) \$))
 
