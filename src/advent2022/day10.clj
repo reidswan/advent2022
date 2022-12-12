@@ -39,15 +39,15 @@
     (fn [[register registers] command]
       (let [reg* (enact register command)]
         [reg* (conj registers reg*)]))
-    [1 []]
+    [1 [1]]
     commands)))
 
 (defn draw [values]
   (apply str
          (map-indexed
-          (fn [cycle-n sprite-horz]
-            (let [index (cycle-horz-position cycle-n)]
-              (if (overlaps? sprite-horz (inc index))
+          (fn [index sprite-horz]
+            (let [pixel-horz (cycle-horz-position index)]
+              (if (overlaps? sprite-horz pixel-horz)
                 \#
                 \space)))
           values)))
