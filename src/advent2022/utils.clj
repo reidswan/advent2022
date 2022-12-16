@@ -5,4 +5,7 @@
 
 (defn trace
   ([x] (pprint x) x)
-  ([msg x] (pprint msg x) x))
+  ([msg x] (print msg) (pprint x) x))
+
+(defn map-vals [f m]
+  (into {} (map (fn [e] [(key e) (f (val e))]) m)))

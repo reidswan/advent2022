@@ -1,6 +1,5 @@
 (ns advent2022.day10
-  (:require [advent2022.utils :refer [trace]]
-            [clojure.core.match :refer [match]]
+  (:require [clojure.core.match :refer [match]]
             [clojure.string :refer [join split-lines trim]]))
 
 (defn load-input [] (slurp "resources/day10.in"))
