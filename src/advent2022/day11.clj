@@ -159,7 +159,8 @@
                           (sim-round monkeys id-order worry-mod sim-item-p2))
                         monkeys (range 10000))
         inspected (map :inspected (vals monkeys))]
-    (apply * (take 2 (sort > inspected)))))
+    (apply * (take 2 (sort > inspected))
+           )))
 
 (defn solve []
   (let [input (parse-input (load-input))]

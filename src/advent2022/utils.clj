@@ -3,9 +3,10 @@
 
 (def sum (partial apply +))
 
-(defn trace
-  ([x] (pprint x) x)
-  ([msg x] (print msg) (pprint x) x))
+(defn trace [f & args]
+  (let [res (apply f args)]
+    (pprint res)
+    res))
 
 (defn map-vals [f m]
   (into {} (map (fn [e] [(key e) (f (val e))]) m)))

@@ -10,7 +10,8 @@
             [advent2022.day8  :as day8]
             [advent2022.day9  :as day9]
             [advent2022.day10 :as day10]
-            [advent2022.day11 :as day11]))
+            [advent2022.day11 :as day11]
+            [advent2022.day12 :as day12]))
 
 (def solns
   {"1"  day1/solve
@@ -23,7 +24,8 @@
    "8"  day8/solve
    "9"  day9/solve
    "10" day10/solve
-   "11" day11/solve})
+   "11" day11/solve
+   "12" day12/solve})
 
 (defn run
   "Attempt to run the solution for the given day"
