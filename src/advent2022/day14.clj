@@ -88,9 +88,9 @@
   ([{filled :filled :as state} [x y] prev-sand-pos get-move]
    (let [move (get-move state [x y])]
      (cond
-         ; sand fell into the void!
+       ;; sand fell into the void!
        (= :void move) [state :void]
-         ; sand come to rest
+       ;; sand come to rest
        (nil? move) [(assoc state :filled (conj filled [x y])) prev-sand-pos]
        :else (recur state move [x y] get-move)))))
 
