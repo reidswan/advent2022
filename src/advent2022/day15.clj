@@ -78,7 +78,6 @@
    (when (> curr-row 4000000) (throw (AssertionError. "no uncovered cell in range")))
    (let [ranges (map #(excluded-row-range % curr-row) input)
          combo-ranges (combine-rows ranges)]
-     (when (zero? (mod curr-row 1000)) (println curr-row))
      (if (some #(range-fully-contained? % {:from 0 :to 4000000}) combo-ranges)
        (recur input (inc curr-row))
        ; this isn't very robust so fingers crossed that it works
