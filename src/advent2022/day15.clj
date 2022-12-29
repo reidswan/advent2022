@@ -86,7 +86,6 @@
 
 (defn part-2 [input]
   (let [{:keys [x y]} (find-first-uncovered input)]
-    (println x y)
     (+ (* 4000000 x) y)))
 
 (defn solve []
